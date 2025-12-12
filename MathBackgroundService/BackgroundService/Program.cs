@@ -9,8 +9,8 @@ using BackgroundServiceMath.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<BackgroundServiceContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'BackgroundServiceContext' not found.")));
-    // options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'BackgroundServiceContext' not found.")));
+    //options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'BackgroundServiceContext' not found.")));
+     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'BackgroundServiceContext' not found.")));
 
 // Permet d'obtenir des erreurs de BD plus claires et m�me d'appliquer des migrations manquantes
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
